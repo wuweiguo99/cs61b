@@ -2,7 +2,7 @@ package lesson2;
 
 
 public class Sllist {
-    public IntNode first;
+    private IntNode first;
     public Sllist(int x)
     {
         first = new IntNode(x, null);
