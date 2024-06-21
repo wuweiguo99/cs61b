@@ -1,15 +1,24 @@
 package lesson2;
 
 
+
 public class Sllist {
     private IntNode first;
+    private int size;
+    public Sllist()
+    {
+        first = null;
+        size = 0;
+    }
     public Sllist(int x)
     {
         first = new IntNode(x, null);
+        size = 1;
     }
     public void addsllist(int x)
     {
         first = new IntNode(x, first);
+        size += 1;
     }
     public int getsllist()
     {
@@ -34,10 +43,17 @@ public class Sllist {
             p = p.Next;
         }
         p.Next = new IntNode(x, null);
+        size+=1;
     }
+    /*Return the length of List.*/
+    public int listsize()
+    {
+        return size;
+    }
+
     public static void main(String[] args)
     {
-        Sllist  L = new Sllist(10);
+        Sllist  L = new Sllist();
         L.addsllist(15);
         L.addsllist(5);
         int r = L.getsllist();
@@ -45,6 +61,7 @@ public class Sllist {
         L.addlast(20);
         L.printlist();
         System.out.println("L.item:"+r);
+        System.out.println("L size:"+ L.listsize());
 
     }
 }
